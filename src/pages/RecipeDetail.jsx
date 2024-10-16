@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import { useFavourite } from "../context/FavContext";
 import { GoDotFill } from "react-icons/go";
 import { RiHeartAddLine, RiHeartFill } from "react-icons/ri";
-import { HiMiniStar } from "react-icons/hi2";
 
 const RecipeDetail = () => {
   const location = useLocation();

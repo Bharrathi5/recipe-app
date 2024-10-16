@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RecipeList from "../components/RecipeList"; 
+import Shimmer from "../components/Shimmer";
 
 const Cuisine = () => {
   const [recipes, setRecipes] = useState([]);
@@ -28,7 +29,7 @@ const Cuisine = () => {
     fetchRecipes();
   }, []);
 
-  if (loading) return <p>Loading cuisines...</p>;
+  if (loading) return <Shimmer/>;
 
   return (
     <div className="p-5">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import RecipeList from "../components/RecipeList";
+import Shimmer from "../components/Shimmer";
 
 const Search = () => {
   
@@ -29,7 +30,7 @@ const Search = () => {
     fetchSearch();
   }, [query]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Shimmer/>;
 
   return (
     <div className="m-10">

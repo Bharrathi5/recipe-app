@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RecipeList from "../components/RecipeList";
+import Shimmer from "../components/Shimmer";
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
@@ -21,7 +22,7 @@ const Home = () => {
     getAllRecipes();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Shimmer/>;
 
   return (
     <div>
