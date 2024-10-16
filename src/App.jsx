@@ -7,20 +7,23 @@ import Cuisine from "./pages/Cuisine";
 import Favourites from "./pages/Favourites";
 import Search from "./pages/Search";
 import RecipeDetail from "./pages/RecipeDetail";
+import { FavProvider } from "./context/FavContext";
 
 function App() {
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/mealtype" element={<MealType />} />
-        <Route path="/cuisine" element={<Cuisine />} />
-        <Route path="/fav" element={<Favourites />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/detail/:id" element={<RecipeDetail />} />
-      </Routes>
-    </Router>
+    <FavProvider>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mealtype" element={<MealType />} />
+          <Route path="/cuisine" element={<Cuisine />} />
+          <Route path="/fav" element={<Favourites />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/detail/:id" element={<RecipeDetail />} />
+        </Routes>
+      </Router>
+    </FavProvider>
   );
 }
 

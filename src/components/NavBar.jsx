@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const handleInput = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      navigate(`/search?query=${searchTerm}`);
+      setSearchTerm("");
+    }
+  };
+
   return (
     <header className="flex justify-between h-16 p-3 mt-3">
       <Link to="/">
@@ -13,13 +28,18 @@ const NavBar = () => {
         </div>
       </Link>
       <div>
-        <form className="mx-3 flex flex-1 gap-2">
+        <form className="mx-3 flex flex-1 gap-2" onSubmit={handleSubmit}>
           <input
             className="border-2 border-black bg-transparent rounded-3xl w-96 h-10 p-3 text-black"
             type="text"
             placeholder="Search for recipes..."
+            value={searchTerm}
+            onChange={handleInput}
           />
-          <button className="border-2 border-black rounded-full w-10 justify-center">
+          <button
+            type="submit"
+            className="border-2 border-black rounded-full w-10 justify-center"
+          >
             <CiSearch className="size-6 mx-1.5" />
           </button>
         </form>

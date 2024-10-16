@@ -3,7 +3,6 @@ import RecipeList from "../components/RecipeList";
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
-
   const [loading, setLoading] = useState(true);
 
   const getAllRecipes = async () => {
@@ -26,7 +25,7 @@ const Home = () => {
 
   return (
     <div>
-      <RecipeList title="All Recipes" data={recipes} loading={loading} />
+      <RecipeList title="All Recipes" data={recipes} />
     </div>
   );
 };
