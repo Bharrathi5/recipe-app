@@ -35,32 +35,31 @@ const MealType = () => {
       setMealTypeLoading(false);
     }
   };
+
+
+  if (mealTypeLoading) return <p>Loading...</p>;
+
   return (
     <div>
       <RecipeList
         title="Breakfast"
         data={mealTypeRecipes.breakfast}
-        loading={mealTypeLoading}
       />
       <RecipeList
         title="Lunch"
         data={mealTypeRecipes.lunch}
-        loading={mealTypeLoading}
       />
       <RecipeList
         title="Dinner"
         data={mealTypeRecipes.dinner}
-        loading={mealTypeLoading}
       />
       <RecipeList
         title="Snack"
         data={mealTypeRecipes.snack}
-        loading={mealTypeLoading}
       />
       <RecipeList
         title="Dessert"
         data={mealTypeRecipes.dessert}
-        loading={mealTypeLoading}
       />
     </div>
   );

@@ -27,7 +27,7 @@ const Search = () => {
 
   useEffect(() => {
     fetchSearch();
-  }, []);
+  }, [query]);
 
   if (loading) return <p>Loading...</p>;
 
