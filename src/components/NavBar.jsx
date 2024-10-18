@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { CiMenuKebab, CiSearch } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
@@ -65,11 +65,14 @@ const NavBar = () => {
           className="md:hidden focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <CiMenuKebab className="size-11 pr-5"/>
+          <CiMenuKebab className="size-11 pr-5" />
         </button>
 
         {isMenuOpen && (
-          <div className="absolute top-16 left-72 w-1/3 bg-white shadow-md md:hidden">
+          <div
+            className="absolute top-16 left-72 w-1/3 bg-white shadow-md md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             <Link to="/" className="block p-4">
               Home
             </Link>
