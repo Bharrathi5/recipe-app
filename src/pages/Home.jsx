@@ -44,7 +44,7 @@ const Home = () => {
     <div>
       <div className="relative">
         <button
-          className="flex items-center border px-3 py-2 rounded-lg md:text-xl "
+          className="flex items-center border px-3 py-2 ml-5 mt-5 rounded-lg md:text-xl "
           onClick={toggleDropdown}
         >
           Sort By <IoIosArrowDropdown className="ml-2 md:size-6" />
